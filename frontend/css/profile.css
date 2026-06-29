@@ -1,0 +1,87 @@
+/* =========================================================
+   InkSphere — profile.css
+   Public profile header + "their posts" grid + edit-profile
+   form (shown only when viewing your own profile).
+   ========================================================= */
+
+.profile-header {
+  background: var(--color-surface-bone);
+  padding: var(--space-xxxl) 0;
+}
+
+.profile-header-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.profile-meta-block { flex: 1; min-width: 240px; }
+.profile-name { margin-bottom: 4px; }
+.profile-bio { color: var(--color-charcoal); max-width: 540px; margin-top: var(--space-sm); }
+
+.profile-stats-row {
+  display: flex;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+.profile-stat .value { font-family: var(--font-display); font-weight: 700; font-size: 22px; }
+.profile-stat .label { font-size: 13px; color: var(--color-mute); }
+
+.profile-actions { display: flex; gap: 10px; align-self: flex-start; }
+
+.profile-tabs {
+  display: flex;
+  gap: var(--space-xl);
+  border-bottom: 1px solid var(--color-hairline);
+  margin-bottom: var(--space-xxl);
+}
+.profile-tab {
+  padding: 14px 2px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-mute);
+  border-bottom: 2px solid transparent;
+  background: none;
+  border-top: none; border-left: none; border-right: none;
+}
+.profile-tab.active { color: var(--color-ink); border-bottom-color: var(--color-primary); }
+
+/* ---------------- Edit profile form ---------------- */
+.profile-edit-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-xxl);
+  max-width: 760px;
+}
+
+.profile-avatar-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+.avatar-upload-btn {
+  position: relative;
+  overflow: hidden;
+}
+.avatar-upload-btn input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.danger-zone {
+  margin-top: var(--space-xxxl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-hairline);
+}
+.danger-zone h3 { color: var(--color-danger); margin-bottom: 8px; }
+
+@media (max-width: 700px) {
+  .profile-edit-grid { grid-template-columns: 1fr; }
+  .profile-avatar-edit { flex-direction: row; }
+  .profile-header-inner { flex-direction: column; align-items: flex-start; }
+  .profile-actions { width: 100%; }
+}

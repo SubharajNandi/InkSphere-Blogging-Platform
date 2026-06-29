@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — InkSphere</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Ink<span class="dot">Sphere</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Explore</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div data-nav-auth-slot></div>
+      </div>
+      <button class="nav-burger" data-nav-burger aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="dash-shell">
+    <aside class="dash-sidebar">
+      <div class="dash-profile-mini" id="dashProfileMini">
+        <span class="avatar avatar-md skeleton"></span>
+        <div>
+          <div class="name">Loading…</div>
+        </div>
+      </div>
+
+      <ul class="dash-nav">
+        <li><a href="dashboard.html" class="active">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+          Dashboard
+        </a></li>
+        <li><a href="create-post.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          New post
+        </a></li>
+        <li><a href="profile.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+          Profile
+        </a></li>
+        <li><a href="blog.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          Explore posts
+        </a></li>
+      </ul>
+    </aside>
+
+    <main class="dash-main">
+      <div class="dash-toolbar">
+        <h1 class="display-md">Your dashboard</h1>
+        <a href="create-post.html" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          New post
+        </a>
+      </div>
+
+      <div class="dash-stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="statPublished">—</div>
+          <div class="stat-label">Published posts</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statDrafts">—</div>
+          <div class="stat-label">Drafts</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statLikes">—</div>
+          <div class="stat-label">Total likes</div>
+        </div>
+      </div>
+
+      <h2 class="heading-sm" style="margin-bottom: 16px;">Your posts</h2>
+      <div id="dashTableWrap">
+        <div class="loading-row"><span class="spinner"></span><span>Loading your posts…</span></div>
+      </div>
+    </main>
+  </div>
+
+  <div class="mobile-drawer" data-mobile-drawer>
+    <div class="mobile-drawer-panel">
+      <button class="mobile-drawer-close" data-mobile-drawer-close aria-label="Close menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Explore</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="profile.html">Profile</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

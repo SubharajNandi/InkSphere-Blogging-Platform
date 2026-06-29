@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InkSphere — Write. Publish. Be heard.</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><h1>Ink</h1><h1><span class="dot">Sphere</span></h1></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="blog.html">Explore</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="nav-search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="homeSearchInput" placeholder="Search posts…">
+        </div>
+        <div data-nav-auth-slot></div>
+      </div>
+      <button class="nav-burger" data-nav-burger aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero band -->
+  <section class="hero-band">
+    <div class="container hero-band-inner">
+      <p class="subtitle hero-eyebrow">A space for writers and readers</p>
+      <h1 class="display-xxl hero-title">Write what<br>matters. Publish<br>without friction.</h1>
+      <p class="body-lg hero-sub">InkSphere is a blogging platform built for people who'd rather write than wrestle with publishing tools. Create posts, start threads in the comments, and build an audience around your ideas.</p>
+      <div class="hero-actions">
+        <a href="register.html" class="btn btn-dark">Start writing — it's free</a>
+        <a href="blog.html" class="btn btn-outline btn-outline-on-hero">Browse posts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured / recent posts -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="display-lg">Fresh off the press</h2>
+          <p class="body-md text-charcoal">The latest posts from the InkSphere community.</p>
+        </div>
+        <a href="blog.html" class="btn btn-outline">View all posts</a>
+      </div>
+
+      <div class="post-grid" id="homeFeaturedPosts">
+        <!-- Skeletons shown while loading; replaced by post-card.js render -->
+        <div class="skeleton post-card-skeleton"></div>
+        <div class="skeleton post-card-skeleton"></div>
+        <div class="skeleton post-card-skeleton"></div>
+        <div class="skeleton post-card-skeleton"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works (dark band, mirrors "code-story" rhythm) -->
+  <section class="howitworks-band">
+    <div class="container">
+      <p class="subtitle howitworks-eyebrow">How it works</p>
+      <h2 class="display-xl howitworks-title">From draft to<br>published in minutes.</h2>
+
+      <div class="howitworks-grid">
+        <div class="howitworks-step">
+          <span class="howitworks-num">01</span>
+          <h3 class="heading-md">Create an account</h3>
+          <p class="body-md text-on-dark-mute">Register with your name, email, and a password. You're set up to publish in under a minute.</p>
+        </div>
+        <div class="howitworks-step">
+          <span class="howitworks-num">02</span>
+          <h3 class="heading-md">Write your post</h3>
+          <p class="body-md text-on-dark-mute">Use the editor to draft, format, and add a cover image. Save as a draft or publish right away.</p>
+        </div>
+        <div class="howitworks-step">
+          <span class="howitworks-num">03</span>
+          <h3 class="heading-md">Get comments</h3>
+          <p class="body-md text-on-dark-mute">Readers respond directly on your post. Reply, moderate, and keep the conversation going.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capability tags strip -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="display-lg">Built for writers,<br>not webmasters</h2>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <div class="card feature-card">
+          <span class="badge-tag-icon">🔐</span>
+          <h3 class="heading-sm">Secure by default</h3>
+          <p class="body-md text-charcoal">Registration, login, and session handling come baked in — your account stays yours.</p>
+        </div>
+        <div class="card feature-card">
+          <span class="badge-tag-icon">✍️</span>
+          <h3 class="heading-sm">A real editor</h3>
+          <p class="body-md text-charcoal">Create, edit, and delete posts with a distraction-free writing surface.</p>
+        </div>
+        <div class="card feature-card">
+          <span class="badge-tag-icon">💬</span>
+          <h3 class="heading-sm">Comments that matter</h3>
+          <p class="body-md text-charcoal">Every post has a dedicated thread so readers can respond and writers can reply back.</p>
+        </div>
+        <div class="card feature-card">
+          <span class="badge-tag-icon">⚡</span>
+          <h3 class="heading-sm">Fast, RESTful backend</h3>
+          <p class="body-md text-charcoal">Posts, comments, and profiles are all backed by a clean REST API and a real database.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA stripe -->
+  <section class="closing-band">
+    <div class="container closing-band-inner">
+      <h2 class="display-xl">Your next post starts here.</h2>
+      <a href="register.html" class="btn btn-primary">Create your account</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="nav-logo">Ink<span class="dot">Sphere</span></div>
+          <p>A blogging platform for people who'd rather write than wrestle with publishing tools.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="blog.html">Explore posts</a></li>
+            <li><a href="register.html">Create account</a></li>
+            <li><a href="login.html">Sign in</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="create-post.html">Write a post</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 InkSphere. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.5.55-3.18-.6-3.39-1.16-.13-.32-.6-1.16-1.04-1.4-.35-.19-.85-.65-.01-.66.79-.01 1.35.73 1.54 1.04.9 1.52 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.38-1.99 1.03-2.69-.1-.25-.45-1.29.1-2.69 0 0 .85-.27 2.79 1.03a9.5 9.5 0 0 1 5.08 0c1.94-1.3 2.79-1.03 2.79-1.03.55 1.4.2 2.44.1 2.69.65.7 1.03 1.59 1.03 2.69 0 3.83-2.34 4.68-4.57 4.92.36.31.67.92.67 1.85 0 1.34-.01 2.42-.01 2.75 0 .27.18.59.68.49A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-drawer" data-mobile-drawer>
+    <div class="mobile-drawer-panel">
+      <button class="mobile-drawer-close" data-mobile-drawer-close aria-label="Close menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Explore</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/blog.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      loadHomeFeaturedPosts();
+      document.getElementById('homeSearchInput')?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && e.target.value.trim()) {
+          window.location.href = `blog.html?search=${encodeURIComponent(e.target.value.trim())}`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

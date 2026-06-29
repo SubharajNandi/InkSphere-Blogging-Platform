@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore posts — InkSphere</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Ink<span class="dot">Sphere</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html" class="active">Explore</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div data-nav-auth-slot></div>
+      </div>
+      <button class="nav-burger" data-nav-burger aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <h1 class="display-lg">Explore posts</h1>
+      <p class="body-md text-charcoal" style="margin-top:8px;">Read what the InkSphere community is publishing.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-toolbar">
+        <div class="nav-search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="blogSearchInput" placeholder="Search posts by title or topic…">
+        </div>
+        <div class="blog-sort">
+          <select id="blogSortSelect" class="input">
+            <option value="-createdAt">Newest first</option>
+            <option value="createdAt">Oldest first</option>
+            <option value="-likesCount">Most liked</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="pill-row">
+        <button class="pill active" data-tag="">All</button>
+        <button class="pill" data-tag="technology">Technology</button>
+        <button class="pill" data-tag="lifestyle">Lifestyle</button>
+        <button class="pill" data-tag="travel">Travel</button>
+        <button class="pill" data-tag="food">Food</button>
+        <button class="pill" data-tag="opinion">Opinion</button>
+        <button class="pill" data-tag="tutorial">Tutorial</button>
+      </div>
+
+      <div class="post-grid" id="blogPostGrid">
+        <div class="skeleton post-card-skeleton"></div>
+        <div class="skeleton post-card-skeleton"></div>
+        <div class="skeleton post-card-skeleton"></div>
+        <div class="skeleton post-card-skeleton"></div>
+        <div class="skeleton post-card-skeleton"></div>
+        <div class="skeleton post-card-skeleton"></div>
+      </div>
+
+      <div class="pagination" id="blogPagination"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <div class="nav-logo">Ink<span class="dot">Sphere</span></div>
+          <p>A blogging platform for people who'd rather write than wrestle with publishing tools.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="blog.html">Explore posts</a></li>
+            <li><a href="register.html">Create account</a></li>
+            <li><a href="login.html">Sign in</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="create-post.html">Write a post</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 InkSphere. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-drawer" data-mobile-drawer>
+    <div class="mobile-drawer-panel">
+      <button class="mobile-drawer-close" data-mobile-drawer-close aria-label="Close menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Explore</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/blog.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => BlogListing.init());
+  </script>
+</body>
+</html>

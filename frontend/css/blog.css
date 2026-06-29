@@ -1,0 +1,293 @@
+/* =========================================================
+   InkSphere — blog.css
+   Homepage hero + marketing sections, and the blog listing
+   (post grid, filters, pagination).
+   ========================================================= */
+
+/* ---------------- Hero band ---------------- */
+.hero-band {
+  background: radial-gradient(circle at 80% 20%, var(--color-hero-glow) 0%, var(--color-hero-warm) 45%, var(--color-hero-warm) 70%, var(--color-hero-pink) 100%);
+  color: var(--color-on-dark);
+  padding: var(--space-band) 0 var(--space-section);
+}
+
+.hero-band-inner {
+  max-width: 880px;
+}
+
+.hero-eyebrow {
+  color: var(--color-on-dark);
+  opacity: 0.9;
+  margin-bottom: var(--space-lg);
+}
+
+.hero-title {
+  color: var(--color-on-dark);
+  margin-bottom: var(--space-xl);
+}
+
+.hero-sub {
+  color: var(--color-on-dark-mute);
+  max-width: 560px;
+  margin-bottom: var(--space-xxl);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.btn-outline-on-hero {
+  background: transparent;
+  color: var(--color-on-dark);
+  border-color: rgba(252,252,252,0.5);
+}
+.btn-outline-on-hero:hover { background: rgba(252,252,252,0.12); }
+
+@media (max-width: 600px) {
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; }
+}
+
+/* ---------------- Section head ---------------- */
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xxl);
+  flex-wrap: wrap;
+}
+
+/* ---------------- Post grid & cards ---------------- */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.post-card-skeleton { height: 320px; }
+
+.post-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.post-card:hover {
+  box-shadow: 0 8px 24px rgba(32,32,32,0.08);
+  transform: translateY(-2px);
+}
+
+.post-card-cover {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--color-surface-bone);
+  position: relative;
+  overflow: hidden;
+}
+.post-card-cover img { width: 100%; height: 100%; object-fit: cover; }
+.post-card-status {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.post-card-body {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.post-card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.post-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-excerpt {
+  color: var(--color-charcoal);
+  font-size: 14px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  font-size: 13px;
+  color: var(--color-mute);
+}
+.post-card-meta .meta-name { color: var(--color-ink); font-weight: 600; }
+.post-card-meta .dot-sep { color: var(--color-stone); }
+
+/* ---------------- Filter / sub-nav pills ---------------- */
+.pill-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: var(--space-xxl);
+  scrollbar-width: none;
+}
+.pill-row::-webkit-scrollbar { display: none; }
+
+.pill {
+  flex-shrink: 0;
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+}
+.pill.active {
+  background: var(--color-ink);
+  color: var(--color-on-dark);
+  border-color: var(--color-ink);
+}
+.pill:hover:not(.active) { border-color: var(--color-hairline-strong); }
+
+@media (max-width: 767px) {
+  .pill { height: 40px; padding: 8px 16px; }
+}
+
+/* ---------------- Blog listing toolbar ---------------- */
+.blog-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+}
+.blog-toolbar .nav-search { min-width: 280px; }
+.blog-sort select.input { width: auto; height: 36px; padding: 6px 36px 6px 16px; font-size: 14px; }
+
+/* ---------------- Pagination ---------------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-xxxl);
+}
+.page-btn {
+  min-width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-hairline);
+  background: var(--color-surface-card);
+  color: var(--color-ink);
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+.page-btn.active { background: var(--color-ink); color: var(--color-on-dark); border-color: var(--color-ink); }
+.page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.page-btn:hover:not(.active):not(:disabled) { border-color: var(--color-hairline-strong); }
+
+/* ---------------- How it works (dark band) ---------------- */
+.howitworks-band {
+  background: var(--color-surface-dark);
+  color: var(--color-on-dark);
+  padding: var(--space-section) 0;
+}
+.howitworks-eyebrow { color: var(--color-hero-glow); margin-bottom: var(--space-md); }
+.howitworks-title { color: var(--color-on-dark); margin-bottom: var(--space-xxxl); }
+
+.howitworks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xxl);
+}
+.howitworks-step {
+  border-top: 1px solid var(--color-divider-dark);
+  padding-top: var(--space-lg);
+}
+.howitworks-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-hero-glow);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.howitworks-step h3 { color: var(--color-on-dark); margin-bottom: var(--space-sm); }
+.text-on-dark-mute { color: var(--color-on-dark-mute); }
+
+@media (max-width: 1023px) {
+  .howitworks-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
+}
+
+/* ---------------- Feature grid ---------------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+.feature-card { display: flex; flex-direction: column; gap: var(--space-sm); }
+.badge-tag-icon { font-size: 28px; margin-bottom: 4px; }
+
+@media (max-width: 1023px) {
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .feature-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------------- Closing CTA band ---------------- */
+.closing-band {
+  background: var(--color-surface-bone);
+  padding: var(--space-band) 0;
+}
+.closing-band-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+  text-align: center;
+}
+
+/* ---------------- Responsive: post grid ---------------- */
+@media (max-width: 1279px) {
+  .post-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1023px) {
+  .post-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .post-grid { grid-template-columns: 1fr; }
+}

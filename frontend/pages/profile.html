@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — InkSphere</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Ink<span class="dot">Sphere</span></a>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="blog.html">Explore</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div data-nav-auth-slot></div>
+      </div>
+      <button class="nav-burger" data-nav-burger aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div id="profileRoot">
+    <section class="profile-header">
+      <div class="container profile-header-inner">
+        <span id="profileAvatar"><span class="avatar avatar-xl skeleton"></span></span>
+        <div class="profile-meta-block">
+          <h1 class="display-md profile-name" id="profileName">Loading…</h1>
+          <p class="caption" id="profileJoined">—</p>
+          <p class="body-md profile-bio" id="profileBio"></p>
+          <div class="profile-stats-row">
+            <div class="profile-stat"><span class="value" id="statPosts">—</span> <span class="label">Posts</span></div>
+            <div class="profile-stat"><span class="value" id="statFollowers">—</span> <span class="label">Followers</span></div>
+          </div>
+        </div>
+        <div class="profile-actions" id="profileActions"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="profile-tabs">
+          <button type="button" class="profile-tab active" data-status="published">Published</button>
+          <button type="button" class="profile-tab" data-status="all">All</button>
+        </div>
+
+        <div class="post-grid" id="profilePostGrid">
+          <div class="skeleton post-card-skeleton"></div>
+          <div class="skeleton post-card-skeleton"></div>
+          <div class="skeleton post-card-skeleton"></div>
+          <div class="skeleton post-card-skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Edit profile section: only rendered/shown for own profile -->
+    <section class="section hidden" id="profileEditSection" style="background: var(--color-surface-bone); padding-top: var(--space-section);">
+      <div class="container">
+        <h2 class="heading-md" style="margin-bottom: var(--space-xl);">Edit your profile</h2>
+
+        <div class="profile-edit-grid">
+          <div class="profile-avatar-edit">
+            <span id="editAvatarPreview"><span class="avatar avatar-lg skeleton"></span></span>
+            <button type="button" class="btn btn-outline btn-sm avatar-upload-btn">
+              Change photo
+              <input type="file" id="avatarFileInput" accept="image/*">
+            </button>
+          </div>
+
+          <form id="profileEditForm">
+            <div class="field">
+              <label for="editName">Name</label>
+              <input type="text" id="editName" name="name" class="input" required>
+            </div>
+            <div class="field">
+              <label for="editBio">Bio</label>
+              <textarea id="editBio" name="bio" class="input textarea" placeholder="Tell readers a bit about yourself…" maxlength="280"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </form>
+        </div>
+
+        <div class="profile-edit-grid" style="margin-top: var(--space-xxxl);">
+          <div></div>
+          <div style="max-width: 480px;">
+            <h3 class="heading-sm" style="margin-bottom: var(--space-lg);">Change password</h3>
+            <div class="auth-form-error hidden" id="passwordFormError"></div>
+            <form id="passwordChangeForm">
+              <div class="field">
+                <label for="currentPassword">Current password</label>
+                <input type="password" id="currentPassword" name="currentPassword" class="input" required autocomplete="current-password">
+              </div>
+              <div class="field">
+                <label for="newPassword">New password</label>
+                <input type="password" id="newPassword" name="newPassword" class="input" required minlength="8" autocomplete="new-password">
+              </div>
+              <div class="field">
+                <label for="confirmNewPassword">Confirm new password</label>
+                <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="input" required autocomplete="new-password">
+              </div>
+              <button type="submit" class="btn btn-outline">Update password</button>
+            </form>
+
+            <div class="danger-zone">
+              <h3 class="heading-sm">Delete account</h3>
+              <p class="body-sm text-charcoal" style="margin-bottom: var(--space-lg);">This permanently deletes your account, posts, and comments. This cannot be undone.</p>
+              <button type="button" class="btn btn-danger" id="deleteAccountBtn">Delete my account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 InkSphere. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-drawer" data-mobile-drawer>
+    <div class="mobile-drawer-panel">
+      <button class="mobile-drawer-close" data-mobile-drawer-close aria-label="Close menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="blog.html">Explore</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/blog.js"></script>
+  <script src="../js/profile.js"></script>
+</body>
+</html>
