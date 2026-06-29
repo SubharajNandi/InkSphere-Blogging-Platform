@@ -3,6 +3,7 @@
 A full-stack blogging platform: users register, write posts, and comment
 on each other's work. Vanilla HTML/CSS/JS frontend, Express + MongoDB
 backend.
+(NOT COMPLETE YET)
 
 ## Project structure
 
